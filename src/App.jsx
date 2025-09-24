@@ -1,5 +1,8 @@
 import './App.css'
-
+import xImg from "./assets/x.png"
+import linkedinImg from "./assets/linkedin.png"
+import facebookImg from "./assets/facebook.png"
+import mailImg from "./assets/mail.png"
 function App() {
 
   return (
@@ -33,11 +36,60 @@ function App() {
         Main Section
       </main>
 
-      <footer>
-        Footer Section
+
+
+
+
+      {/* ===== FOOTER Section Starts from here...  ===== */}
+      <footer className="bg-[#000000] text-gray-300 mt-auto">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 px-6 py-12">
+          <div className="">
+            <h2 className="font-bold text-[#FFFFFF] text-2xl">CS — Ticket System</h2>
+            <p className="mt-3 text-[#A1A1AA] text-sm leading-relaxed">CS Ticket System helps businesses manage customer issues efficiently with faster response times, clear tracking, and smooth communication. Our platform ensures reliable support and improved customer satisfaction.</p>
+          </div>
+
+          <div>
+            <h3 className="text-[#FFFFFF] text-xl font-semibold mb-3">Company</h3>
+            <ul className="space-y-2 text-sm text-[#A1A1AA]">
+              <li>About Us</li>
+              <li>Our Mission</li>
+              <li>Contact Sales</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-[#FFFFFF] text-xl font-semibold mb-3">Services</h3>
+            <ul className="space-y-2 text-sm text-[#A1A1AA]">
+              <li>Products & Services</li>
+              <li>Customer Stories</li>
+              <li>Download Apps</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-[#FFFFFF] text-xl font-semibold mb-3">Information</h3>
+            <ul className="space-y-2 text-sm text-[#A1A1AA] mb-4">
+              <li>Privacy Policy</li>
+              <li>Terms & Conditions</li>
+              <li>Join Us</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-[#FFFFFF] text-xl font-semibold mb-3">Social Links</h3>
+            <ul className="space-y-3 text-sm text-[#A1A1AA]">
+              <li className="flex items-center gap-2"><img src={xImg} alt="x.com logo" />@CS — Ticket System</li>
+              <li className="flex items-center gap-2"><img src={linkedinImg} alt="linkedin logo" />#CS — Ticket System</li>
+              <li className="flex items-center gap-2"><img src={facebookImg} alt="facebook logo" />&CS — Ticket System</li>
+              <li className="flex items-center gap-2"><img src={mailImg} alt="mail logo" />support@csst.com</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t w-7xl mx-auto border-gray-800 text-center text-sm py-4">
+          <p className='text-[#FAFAFA]'>©2025 CS — Ticket System. All rights reserved. </p>
+        </div>
       </footer>
-
-
     </>
   )
 }
