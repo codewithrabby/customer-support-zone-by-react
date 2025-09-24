@@ -18,28 +18,27 @@ function App() {
   const customersPromise = fetchCusomers()
   return (
     <>
-      {/* ===== NAVBAR Section Starts from here... ===== */}
-      <nav className="w-full bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
+      {/* ===== NavBar Section Starts from here... ===== */}
+      <nav className="w-full bg-white shadow-sm border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-6 py-3 flex flex-col md:flex-row md:justify-between md:items-center gap-4 md:gap-0">
           <div className="font-bold text-lg">
             <h3 className='text-[#130B2D]'>CS — Ticket System</h3>
           </div>
 
-        <div className='flex items-center'>
-          <ul className="hidden md:flex gap-6 text-sm text-[#000000] font-medium">
-            <li className="hover:text-black cursor-pointer">Home</li>
-            <li className="hover:text-black cursor-pointer">FAQ</li>
-            <li className="hover:text-black cursor-pointer">Changelog</li>
-            <li className="hover:text-black cursor-pointer">Blog</li>
-            <li className="hover:text-black cursor-pointer">Download</li>
-            <li className="hover:text-black cursor-pointer">Contact</li>
-          </ul>
-          <button className="ml-4 bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-md text-[#FFFFFF] font-semibold px-4 py-2 rounded-lg shadow hover:bg-purple-700">
-            + New Ticket
-          </button>
-        </div>
+          <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+            <ul className="flex flex-col md:flex-row gap-4 md:gap-6 text-sm text-[#000000] font-medium">
+              <li className="hover:text-black cursor-pointer">Home</li>
+              <li className="hover:text-black cursor-pointer">FAQ</li>
+              <li className="hover:text-black cursor-pointer">Changelog</li>
+              <li className="hover:text-black cursor-pointer">Blog</li>
+              <li className="hover:text-black cursor-pointer">Download</li>
+              <li className="hover:text-black cursor-pointer">Contact</li>
+            </ul>
+            <button className="bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-md text-[#FFFFFF] font-semibold px-4 py-2 rounded-lg shadow hover:bg-purple-700">+ New Ticket</button>
+          </div>
         </div>
       </nav>
+
 
       {/* ===== BANNER Section Starts from here... ===== */}
       <section className="max-w-7xl mx-auto grid md:grid-cols-2 gap-6 px-6 py-10">
@@ -68,7 +67,7 @@ function App() {
       </Suspense>
 
       {/* ===== FOOTER Section Starts from here...  ===== */}
-      <footer className="bg-[#000000] text-gray-300 mt-auto">
+      <footer className="bg-[#000000] text-gray-300 mt-10">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 px-6 py-12">
           <div className="">
             <h2 className="font-bold text-[#FFFFFF] text-2xl">CS — Ticket System</h2>
@@ -112,8 +111,8 @@ function App() {
             </ul>
           </div>
         </div>
-        <div className="border-t w-7xl mx-auto border-gray-800 text-center text-sm py-4">
-          <p className='text-[#FAFAFA]'>©2025 CS — Ticket System. All rights reserved. </p>
+        <div className="border-t max-w-7xl mx-auto border-gray-800 text-center text-sm py-4">
+          <p className="text-[#FAFAFA]">©2025 CS — Ticket System. All rights reserved.</p>
         </div>
       </footer>
     </>
