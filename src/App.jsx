@@ -5,16 +5,13 @@ import facebookImg from "./assets/facebook.png"
 import mailImg from "./assets/mail.png"
 import vector1 from "./assets/vector1.png"
 import vector2 from "./assets/vector2.png"
-import CustomersTickets from './components/CustomersTickets'
+import CustomersTicketsAndAside from './components/CustomersTicketsAndAside'
 import { Suspense } from 'react'
-
 
 const fetchCusomers = async () =>{
   const res = await fetch("/customers.json")
   return res.json()
 }
-
-
 
 function App() {
 
@@ -44,9 +41,6 @@ function App() {
         </div>
       </nav>
 
-
-
-
       {/* ===== BANNER Section Starts from here... ===== */}
       <section className="max-w-7xl mx-auto grid md:grid-cols-2 gap-6 px-6 py-10">
         <div className="relative bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-[#FFFFFF] rounded-xl p-8 flex flex-col items-center justify-center overflow-hidden">
@@ -68,19 +62,10 @@ function App() {
         </div>
       </section>
 
-
-
-
-
       {/* ===== MAIN Section Starts from here...  ===== */}
       <Suspense>
-        <CustomersTickets customersPromise={customersPromise}></CustomersTickets>
+        <CustomersTicketsAndAside customersPromise={customersPromise}></CustomersTicketsAndAside>
       </Suspense>
-
-
-
-
-
 
       {/* ===== FOOTER Section Starts from here...  ===== */}
       <footer className="bg-[#000000] text-gray-300 mt-auto">
