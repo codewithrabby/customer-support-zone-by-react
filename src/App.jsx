@@ -3,6 +3,13 @@ import xImg from "./assets/x.png"
 import linkedinImg from "./assets/linkedin.png"
 import facebookImg from "./assets/facebook.png"
 import mailImg from "./assets/mail.png"
+import vector1 from "./assets/vector1.png"
+import vector2 from "./assets/vector2.png"
+
+
+
+
+
 function App() {
 
   return (
@@ -30,14 +37,30 @@ function App() {
         </div>
       </nav>
 
-      <h1>Banner</h1>
+      {/* ===== BANNER Section Starts from here... ===== */}
+      <section className="max-w-7xl mx-auto grid md:grid-cols-2 gap-6 px-6 py-10">
+        <div className="relative bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-[#FFFFFF] rounded-xl p-8 flex flex-col items-center justify-center overflow-hidden">
+          <img src={vector1} alt="left decoration" className="absolute left-0 top-0 h-full object-cover"/>
+          <div className="relative z-10 flex flex-col items-center">
+            <h2 className="text-2xl font-medium">In-Progress</h2>
+            <p className="text-6xl font-bold mt-2">0</p>
+          </div>
+          <img src={vector2} alt="right decoration" className="absolute right-0 top-0 h-full object-cover"/>
+        </div>
+
+        <div className="relative bg-gradient-to-r from-[#54CF68] to-[#00827A] text-[#FFFFFF] rounded-xl p-8 flex flex-col items-center justify-center overflow-hidden">
+          <img src={vector1} alt="left decoration" className="absolute left-0 top-0 h-full object-cover"/>
+          <div className="relative z-10 flex flex-col items-center">
+            <h2 className="text-2xl font-medium">Resolved</h2>
+            <p className="text-6xl font-bold mt-2">0</p>
+          </div>
+          <img src={vector2} alt="right decoration" className="absolute right-0 top-0 h-full object-cover"/>
+        </div>
+      </section>
 
       <main>
         Main Section
       </main>
-
-
-
 
 
       {/* ===== FOOTER Section Starts from here...  ===== */}
