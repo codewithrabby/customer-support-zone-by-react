@@ -5,13 +5,20 @@ import facebookImg from "./assets/facebook.png"
 import mailImg from "./assets/mail.png"
 import vector1 from "./assets/vector1.png"
 import vector2 from "./assets/vector2.png"
+import CustomersTickets from './components/CustomersTickets'
+import { Suspense } from 'react'
 
 
+const fetchCusomers = async () =>{
+  const res = await fetch("/customers.json")
+  return res.json()
+}
 
 
 
 function App() {
 
+  const customersPromise = fetchCusomers()
   return (
     <>
       {/* ===== NAVBAR Section Starts from here... ===== */}
@@ -37,13 +44,16 @@ function App() {
         </div>
       </nav>
 
+
+
+
       {/* ===== BANNER Section Starts from here... ===== */}
       <section className="max-w-7xl mx-auto grid md:grid-cols-2 gap-6 px-6 py-10">
         <div className="relative bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-[#FFFFFF] rounded-xl p-8 flex flex-col items-center justify-center overflow-hidden">
           <img src={vector1} alt="left decoration" className="absolute left-0 top-0 h-full object-cover"/>
           <div className="relative z-10 flex flex-col items-center">
             <h2 className="text-2xl font-medium">In-Progress</h2>
-            <p className="text-6xl font-bold mt-2">0</p>
+            <span className="text-6xl font-bold mt-2">0</span>
           </div>
           <img src={vector2} alt="right decoration" className="absolute right-0 top-0 h-full object-cover"/>
         </div>
@@ -52,15 +62,24 @@ function App() {
           <img src={vector1} alt="left decoration" className="absolute left-0 top-0 h-full object-cover"/>
           <div className="relative z-10 flex flex-col items-center">
             <h2 className="text-2xl font-medium">Resolved</h2>
-            <p className="text-6xl font-bold mt-2">0</p>
+            <span className="text-6xl font-bold mt-2">0</span>
           </div>
           <img src={vector2} alt="right decoration" className="absolute right-0 top-0 h-full object-cover"/>
         </div>
       </section>
 
-      <main>
-        Main Section
-      </main>
+
+
+
+
+      {/* ===== MAIN Section Starts from here...  ===== */}
+      <Suspense>
+        <CustomersTickets customersPromise={customersPromise}></CustomersTickets>
+      </Suspense>
+
+
+
+
 
 
       {/* ===== FOOTER Section Starts from here...  ===== */}
@@ -108,7 +127,6 @@ function App() {
             </ul>
           </div>
         </div>
-
         <div className="border-t w-7xl mx-auto border-gray-800 text-center text-sm py-4">
           <p className='text-[#FAFAFA]'>©2025 CS — Ticket System. All rights reserved. </p>
         </div>

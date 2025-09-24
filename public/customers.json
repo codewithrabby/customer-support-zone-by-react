@@ -1,0 +1,110 @@
+[
+  {
+    "id": "#0001",
+    "title": "Login Issue",
+    "description": "Customer unable to login to the account with correct credentials.",
+    "customerPriority": "High Priority",
+    "customerName": "Alice Johnson",
+    "date": "2025-09-25",
+    "status": "Open"
+  },
+  {
+    "id": "#0002",
+    "title": "Payment Failure",
+    "description": "Payment gateway failed during checkout process.",
+    "customerPriority": "High Priority",
+    "customerName": "Bob Smith",
+    "date": "2025-09-24",
+    "status": "Open"
+  },
+  {
+    "id": "#0003",
+    "title": "Feature Request",
+    "description": "Customer requested dark mode feature in the app.",
+    "customerPriority": "Low Priority",
+    "customerName": "Carol Lee",
+    "date": "2025-09-23",
+    "status": "Open"
+  },
+  {
+    "id": "#0004",
+    "title": "Bug Report",
+    "description": "App crashes when uploading profile picture.",
+    "customerPriority": "High Priority",
+    "customerName": "David Brown",
+    "date": "2025-09-22",
+    "status": "In Progress"
+  },
+  {
+    "id": "#0005",
+    "title": "Account Deletion Request",
+    "description": "Customer requested deletion of their account permanently.",
+    "customerPriority": "Medium Priority",
+    "customerName": "Eve Williams",
+    "date": "2025-09-21",
+    "status": "Open"
+  },
+  {
+    "id": "#0006",
+    "title": "Password Reset",
+    "description": "Customer forgot password and cannot reset via email link.",
+    "customerPriority": "High Priority",
+    "customerName": "Frank Miller",
+    "date": "2025-09-20",
+    "status": "In Progress"
+  },
+  {
+    "id": "#0007",
+    "title": "App Slow Performance",
+    "description": "Customer reported app is very slow after latest update.",
+    "customerPriority": "Medium Priority",
+    "customerName": "Grace Kim",
+    "date": "2025-09-19",
+    "status": "In Progress"
+  },
+  {
+    "id": "#0008",
+    "title": "Subscription Cancellation",
+    "description": "Customer wants to cancel their monthly subscription.",
+    "customerPriority": "Medium Priority",
+    "customerName": "Henry Adams",
+    "date": "2025-09-18",
+    "status": "Open"
+  },
+  {
+    "id": "#0009",
+    "title": "Wrong Invoice",
+    "description": "Invoice generated shows wrong billing amount.",
+    "customerPriority": "High Priority",
+    "customerName": "Isabel Clark",
+    "date": "2025-09-17",
+    "status": "Open"
+  },
+  {
+    "id": "#0010",
+    "title": "Notification Error",
+    "description": "Customer is not receiving push notifications.",
+    "customerPriority": "Low Priority",
+    "customerName": "Jack Wilson",
+    "date": "2025-09-16",
+    "status": "In Progress"
+  },
+  {
+    "id": "#0011",
+    "title": "Data Sync Issue",
+    "description": "Data not syncing between mobile app and web dashboard.",
+    "customerPriority": "High Priority",
+    "customerName": "Karen Davis",
+    "date": "2025-09-15",
+    "status": "In Progress"
+  },
+  {
+    "id": "#0012",
+    "title": "Profile Update Failure",
+    "description": "Customer unable to update profile picture and bio.",
+    "customerPriority": "Medium Priority",
+    "customerName": "Leo Martinez",
+    "date": "2025-09-14",
+    "status": "Open"
+  }
+]
