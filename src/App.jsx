@@ -6,16 +6,18 @@ import mailImg from "./assets/mail.png"
 import vector1 from "./assets/vector1.png"
 import vector2 from "./assets/vector2.png"
 import CustomersTicketsAndAside from './components/CustomersTicketsAndAside'
-import { Suspense } from 'react'
+import { Suspense, useState } from 'react'
 
-const fetchCusomers = async () =>{
+const fetchCustomers = async () => {
   const res = await fetch("/customers.json")
   return res.json()
 }
 
 function App() {
+  const customersPromise = fetchCustomers()
+  const [inProgressCount, setInProgressCount] = useState(0)
+  const [resolvedCount, setResolvedCount] = useState(0)
 
-  const customersPromise = fetchCusomers()
   return (
     <>
       {/* ===== NavBar Section Starts from here... ===== */}
@@ -24,7 +26,6 @@ function App() {
           <div className="font-bold text-lg">
             <h3 className='text-[#130B2D]'>CS — Ticket System</h3>
           </div>
-
           <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
             <ul className="flex flex-col md:flex-row gap-4 md:gap-6 text-sm text-[#000000] font-medium">
               <li className="hover:text-black cursor-pointer">Home</li>
@@ -39,14 +40,13 @@ function App() {
         </div>
       </nav>
 
-
-      {/* ===== BANNER Section Starts from here... ===== */}
+      {/* ===== BANNER Section Starts from here...===== */}
       <section className="max-w-7xl mx-auto grid md:grid-cols-2 gap-6 px-6 py-10">
         <div className="relative bg-gradient-to-r from-[#632EE3] to-[#9F62F2] text-[#FFFFFF] rounded-xl p-8 flex flex-col items-center justify-center overflow-hidden">
           <img src={vector1} alt="left decoration" className="absolute left-0 top-0 h-full object-cover"/>
           <div className="relative z-10 flex flex-col items-center">
             <h2 className="text-2xl font-medium">In-Progress</h2>
-            <span className="text-6xl font-bold mt-2">0</span>
+            <span className="text-6xl font-bold mt-2">{inProgressCount}</span>
           </div>
           <img src={vector2} alt="right decoration" className="absolute right-0 top-0 h-full object-cover"/>
         </div>
@@ -55,23 +55,29 @@ function App() {
           <img src={vector1} alt="left decoration" className="absolute left-0 top-0 h-full object-cover"/>
           <div className="relative z-10 flex flex-col items-center">
             <h2 className="text-2xl font-medium">Resolved</h2>
-            <span className="text-6xl font-bold mt-2">0</span>
+            <span className="text-6xl font-bold mt-2">{resolvedCount}</span>
           </div>
           <img src={vector2} alt="right decoration" className="absolute right-0 top-0 h-full object-cover"/>
         </div>
       </section>
 
-      {/* ===== MAIN Section Starts from here...  ===== */}
-      <Suspense>
-        <CustomersTicketsAndAside customersPromise={customersPromise}></CustomersTicketsAndAside>
+      {/* ===== MAIN Section Starts from here... ===== */}
+      <Suspense fallback={<div className="text-center py-20">Loading Tickets...</div>}>
+        <CustomersTicketsAndAside
+          customersPromise={customersPromise}
+          setInProgressCount={setInProgressCount}
+          setResolvedCount={setResolvedCount}
+        />
       </Suspense>
 
-      {/* ===== FOOTER Section Starts from here...  ===== */}
+      {/* ===== FOOTER Section Starts from here... ===== */}
       <footer className="bg-[#000000] text-gray-300 mt-10">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 px-6 py-12">
-          <div className="">
+          <div>
             <h2 className="font-bold text-[#FFFFFF] text-2xl">CS — Ticket System</h2>
-            <p className="mt-3 text-[#A1A1AA] text-sm leading-relaxed">CS Ticket System helps businesses manage customer issues efficiently with faster response times, clear tracking, and smooth communication. Our platform ensures reliable support and improved customer satisfaction.</p>
+            <p className="mt-3 text-[#A1A1AA] text-sm leading-relaxed">
+              CS Ticket System helps businesses manage customer issues efficiently with faster response times, clear tracking, and smooth communication. Our platform ensures reliable support and improved customer satisfaction.
+            </p>
           </div>
 
           <div>
